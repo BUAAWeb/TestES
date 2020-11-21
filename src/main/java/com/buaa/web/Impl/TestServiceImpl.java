@@ -61,12 +61,12 @@ public class TestServiceImpl implements TestService {
         Random random = new Random();
 
         //模拟数据
-        for (int i = 0; i < 100; i++) {
+        for (int i = 100; i < 150; i++) {
             int i1 = random.nextInt(names.length);
             int i2 = random.nextInt(descArr.length);
             //注意这里 第一个参数是id 所以无论你运行多少次，都只会添加100条数据，如果id存在es更新，不存在添加
             TestBean testBean = new TestBean(i, names[i1], i, String.valueOf(i % 2), descArr[i2]);
-
+            System.out.println(testBean.toString());
             list.add(testBean);
         }
 
